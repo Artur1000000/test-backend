@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import AuthRoute from "./routes/authRoute.js";
 
 const app = express();
 
@@ -11,10 +12,7 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "OK" });
 });
 
-app.post("/api/auth", async(req, res)=>{
-    let a = req.body;
-    res.status(200).json({...a})
-})
+app.use("/api", AuthRoute)
 
 app.listen(process.env.PORT || 4444, (err) => {
   if (err) {
