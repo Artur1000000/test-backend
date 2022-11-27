@@ -1,4 +1,5 @@
 import express from "express-serve-static-core";
+import cors from "cors";
 
 const app = express();
 
